@@ -1,8 +1,9 @@
 <aside class="bg-dark">
     <nav>
-        <ul>
+        <ul class="my-3 fs-5">
             <li><a href="{{ route("admin.home") }}">Dashboard</a></li>
-            <li><a href="#">Lista Post</a></li>
+            <li><a href="{{ route("admin.projects.index") }}">Lista Progetti</a></li>
+            <li><a href="{{ route("admin.tecnologies.index") }}">Lista Tecnologie</a></li>
         </ul>
     </nav>
 </aside>
