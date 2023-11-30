@@ -7,10 +7,10 @@
         <div class="w-50 my-3">
 
             @if(session("error"))
-                    <div class="alert alert-danger" role="alert">
-                        {{session("error")}}
-                    </div>
-                @endif
+                <div class="alert alert-danger" role="alert">
+                    {{session("error")}}
+                </div>
+            @endif
 
             @if(session("success"))
                 <div class="alert alert-success" role="alert">
@@ -41,14 +41,10 @@
                             <td>{{ $tecnology->id }}</td>
                             <td>{{ $tecnology->name }}</td>
                             <td>
-                                <form action="{{ route("admin.tecnologies.destroy", $tecnology->id) }}"
-                                    method="POST"
-                                    onsubmit="return confirm ('Sei sicuro di voler eliminare questa tecnologia?')">
-
-                                    @csrf
-                                    @method("DELETE")
-                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                                </form>
+                                @include("admin.partials.form-delete",[
+                                    "route" => route("admin.tecnologies.destroy", $tecnology),
+                                    "message" => "Sei sicuro di voler eliminare questa tecnologia?"
+                                ])
                             </td>
                         </tr>
                     @endforeach
