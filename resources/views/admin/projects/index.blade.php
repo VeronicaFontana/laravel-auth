@@ -2,6 +2,12 @@
 
 @section("content")
 
+        @if (session("success"))
+        <div class="alert alert-success" role="alert">
+            {{ session("success") }}
+        </div>
+        @endif
+
         <h1>Lista Progetti | <a class="btn btn-success" href="{{ route("admin.projects.create") }}"><i class="fa-solid fa-plus"></i></a> </h1>
         <table class="table">
             <thead>
@@ -21,7 +27,11 @@
                         <td>{{ $project->description }}</td>
                         <td>{{ $project->creation_date }}</td>
                         <td>
-                            <a class="btn btn-info" href="{{ route("admin.projects.show", $project) }}"><i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></a>
+                            <a class="btn btn-info mb-1" href="{{ route("admin.projects.show", $project) }}"><i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></a>
+                            @include("admin.partials.form-delete",[
+                            "route" => route("admin.projects.destroy", $project),
+                            "message" => "Sei sicuro di voler eliminare questo progetto?"
+                            ])
                         </td>
                     </tr>
                 @endforeach

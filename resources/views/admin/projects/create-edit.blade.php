@@ -3,6 +3,16 @@
 @section("content")
 
     <h1 class="mb-4">{{ $name }}</h1>
+
+    @if($errors->any())
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+
     <form action="{{ $route }}" method="POST" >
         @csrf
         @method($method)
