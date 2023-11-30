@@ -2,7 +2,7 @@
 
 @section("content")
 
-        <h1>Lista Tecnologie</h1>
+        <h1>Lista Tipologie</h1>
         <div class="w-50 my-3">
 
             @if(session("error"))
@@ -17,7 +17,7 @@
                 </div>
             @endif
 
-            <form action="{{ route("admin.tecnologies.store") }}" method="POST">
+            <form action="{{ route("admin.types.store") }}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Nuova tecnologia" name="name">
@@ -35,23 +35,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($tecnologies as $tecnology)
+                    @foreach ($types as $type)
                         <tr>
                             <td>
                                 <form
-                                    action="{{ route('admin.tecnologies.update', $tecnology) }}"
+                                    action="{{ route("admin.types.update", $type) }}"
                                     method="POST"
                                     id="form-edit"
-                                    >
-                                        @csrf
-                                        @method('PUT')
-                                        <input type="text" class="form-hidden" value="{{ $tecnology->name }}" name="name" />
-                                    </form>
+                                >
+                                    @csrf
+                                    @method("PUT")
+                                    <input type="text" class="form-hidden" value="{{ $type->name }}" name="name" />
+                                </form>
                             </td>
                             <td>
                                 <button onclick="submitForm()" class="btn btn-warning" id="button-addon2"><i class="fa-solid fa-pencil"></i></button>
                                 @include("admin.partials.form-delete",[
-                                    "route" => route("admin.tecnologies.destroy", $tecnology),
+                                    "route" => route("admin.types.destroy", $type),
                                     "message" => "Sei sicuro di voler eliminare questa tecnologia?"
                                 ])
                             </td>
