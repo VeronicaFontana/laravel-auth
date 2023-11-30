@@ -21,7 +21,7 @@
                         <td>{{ $project->description }}</td>
                         <td>{{ $project->creation_date }}</td>
                         <td>
-                            <a class="btn btn-success" href="{{ route("admin.projects.show", $project) }}"><i class="fa-solid fa-circle-info"></i></a>
+                            <a class="btn btn-info" href="{{ route("admin.projects.show", $project) }}"><i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></a>
                         </td>
                     </tr>
                 @endforeach

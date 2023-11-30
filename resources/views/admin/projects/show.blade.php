@@ -15,7 +15,7 @@
                 <li class="list-group-item"><b>Creato il:</b> {{ date_format($date, "d/m/Y") }}</li>
             </ul>
             <div class="card-body">
-                <a href="#" class="card-link">X</a>
+                <a class="btn btn-warning" href="{{ route("admin.projects.edit", $project) }}" class="card-link"><i class="fa-solid fa-pencil"></i></a>
             </div>
         </div>
 

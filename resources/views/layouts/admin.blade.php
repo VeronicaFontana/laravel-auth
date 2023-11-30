@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(["resources/js/app.js"])
 
     <script src="https://kit.fontawesome.com/66b933bf5d.js" crossorigin="anonymous"></script>
 
@@ -18,7 +18,7 @@
 
     <div class="main-wrapper d-flex">
         @include("admin.partials.sidebar")
-        <div class="container my-4">
+        <div class="p-5 w-100"">
             @yield("content")
         </div>
     </div>
