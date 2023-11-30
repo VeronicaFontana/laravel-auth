@@ -2,7 +2,6 @@
 
 @section("content")
 
-    <div class="container my-3">
         <h1>Lista Tecnologie</h1>
         <div class="w-50 my-3">
 
@@ -51,8 +50,5 @@
                 </tbody>
             </table>
         </div>
-    </div>
-
-
 
 @endsection

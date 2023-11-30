@@ -2,8 +2,7 @@
 
 @section("content")
 
-    <div class="container my-3">
-        <h1>Lista Progetti</h1>
+        <h1>Lista Progetti | <a class="btn btn-success" href="{{ route("admin.projects.create") }}"><i class="fa-solid fa-plus"></i></a> </h1>
         <table class="table">
             <thead>
                 <tr>
@@ -28,9 +27,5 @@
                 @endforeach
             </tbody>
         </table>
-
-    </div>
-
-
 
 @endsection

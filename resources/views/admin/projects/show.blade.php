@@ -2,7 +2,6 @@
 
 @section("content")
 
-    <div class="container my-3">
         <h1>{{ $project->name }}</h1>
         <div class="card my-4" style="width: 18rem;">
             <div class="card-body">
@@ -19,6 +18,5 @@
                 <a href="#" class="card-link">X</a>
             </div>
         </div>
-    </div>
 
 @endsection

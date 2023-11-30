@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Function\Helper;
 
 class ProjectController extends Controller
 {
@@ -26,7 +27,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.projects.create");
     }
 
     /**
@@ -37,7 +38,13 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $form_data['slug'] = Helper::generateSlug($form_data['name'], Project::class);
+        $form_data['creation_date'] = date('Y-m-d');
+
+        $new_project = Project::create($form_data);
+
+        return redirect()->route('admin.projects.show', $new_project);
     }
 
     /**
