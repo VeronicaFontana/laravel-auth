@@ -31,7 +31,8 @@
                 <p class="text-danger">{{ $message }}</p>
             @enderror
             @if ($project)
-                <img width="150" src="{{ asset("storage/" . $project->image) }}"/>
+                @dump($project)
+                <img src="{{ asset("storage/" . $project->image) }}"/>
             @endif
         </div>
         <div class="mb-3">

@@ -8,7 +8,7 @@
 
         <h1>{{ $project->name }}</h1>
         <div class="card my-4" style="width: 18rem;">
-            <img src="{{ asset("storage/" . $project->name) }}" alt="{{ $project->name }}">
+            <img src="{{ asset("storage/" . $project->image) }}" alt="{{ $project->name }}">
             <p>{{ $project->image_original_name }}</p>
             <div class="card-body">
                 <h5 class="card-title">{{ $project->name }}</h5>
